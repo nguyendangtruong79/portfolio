@@ -188,8 +188,8 @@ export function Terminal({
       const promptLine: Line = {
         id: ++seq.current,
         node: (
-          <div className="rounded-lg border border-amber-500/30 bg-amber-500/10 p-2.5 my-1 text-xs">
-            <p className="text-amber-300 font-semibold flex items-center gap-1.5">
+          <div className="rounded-lg border border-amber-500/30 bg-surface p-2.5 my-1 text-xs">
+            <p className="text-amber-400 font-semibold flex items-center gap-1.5">
               <span>🔒 SECURITY GATEWAY: Confidential Interview Briefing Room</span>
             </p>
             <p className="text-fg-dim mt-0.5">
@@ -318,7 +318,7 @@ export function Terminal({
               autoCorrect="off"
               spellCheck={false}
               placeholder="••••••••••••"
-              className="min-w-0 flex-1 bg-transparent text-emerald caret-emerald tracking-widest outline-none placeholder:text-muted/40 focus-visible:outline-none"
+              className="min-w-0 flex-1 bg-transparent text-emerald caret-emerald tracking-widest outline-none placeholder:text-muted focus-visible:outline-none"
             />
           ) : (
             <input
@@ -334,7 +334,7 @@ export function Terminal({
               autoCorrect="off"
               spellCheck={false}
               placeholder="type a command… (e.g. /interview)"
-              className="min-w-0 flex-1 bg-transparent text-fg caret-emerald outline-none placeholder:text-muted/50 focus-visible:outline-none"
+              className="min-w-0 flex-1 bg-transparent text-fg caret-emerald outline-none placeholder:text-muted focus-visible:outline-none"
             />
           )}
         </div>
@@ -350,9 +350,9 @@ export function Terminal({
               execute(c);
               inputRef.current?.focus({ preventScroll: true });
             }}
-            className="pill cursor-pointer transition-colors hover:border-emerald/50 hover:text-emerald"
+            className="pill cursor-pointer transition-colors hover:border-emerald hover:text-emerald"
           >
-            <span className="text-emerald/70">$</span> {c}
+            <span className="text-emerald">$</span> {c}
           </button>
         ))}
       </div>

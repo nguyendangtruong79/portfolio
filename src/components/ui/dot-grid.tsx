@@ -108,7 +108,7 @@ export function DotGrid() {
     <div aria-hidden className="pointer-events-none fixed inset-0 -z-10">
       <canvas ref={canvasRef} className="size-full" />
       {/* vignette + ambient glows */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_0%,transparent_30%,#090a0f_85%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_0%,transparent_30%,var(--palette-obsidian)_85%)]" />
       <div className="absolute -top-40 left-1/2 h-[480px] w-[900px] -translate-x-1/2 rounded-full bg-emerald/10 blur-[120px]" />
       <div className="absolute top-[40%] -right-40 h-[420px] w-[520px] rounded-full bg-cyan/[0.06] blur-[120px]" />
     </div>

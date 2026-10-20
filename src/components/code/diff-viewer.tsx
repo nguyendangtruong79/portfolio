@@ -32,14 +32,14 @@ export function DiffViewer() {
               key={idx}
               className={cn(
                 "flex items-start px-3 py-0.5 hover:bg-surface-2/40 transition-colors",
-                isRemoved && isBefore && "bg-rose-500/10 text-rose-300",
-                isAdded && !isBefore && "bg-emerald-500/10 text-emerald-300"
+                isRemoved && isBefore && "text-rose-400",
+                isAdded && !isBefore && "bg-emerald-500/10 text-emerald"
               )}
             >
-              <span className="w-8 select-none text-right font-mono text-muted/50 pr-4 text-[11px]">
+              <span className="w-8 select-none text-right font-mono text-muted pr-4 text-[11px]">
                 {idx + 1}
               </span>
-              <span className="select-none pr-2 font-mono text-[11px] text-muted/60">
+              <span className="select-none pr-2 font-mono text-[11px] text-muted">
                 {isBefore ? "-" : "+"}
               </span>
               <span className="whitespace-pre overflow-x-auto text-fg-dim font-mono">
@@ -79,7 +79,7 @@ export function DiffViewer() {
               className={cn(
                 "flex items-center gap-2 rounded-lg px-4 py-2 font-mono text-xs font-medium transition-all",
                 isSelected
-                  ? "border border-emerald/50 bg-surface-2 text-emerald shadow-sm"
+                  ? "border border-emerald bg-surface-2 text-emerald shadow-sm"
                   : "border border-transparent text-fg-dim hover:border-line hover:text-fg"
               )}
             >
@@ -119,7 +119,7 @@ export function DiffViewer() {
                 onClick={() => setViewMode("before")}
                 className={cn(
                   "rounded px-2 py-1 transition-colors",
-                  viewMode === "before" ? "bg-rose-500/20 text-rose-300 font-semibold" : "text-fg-dim hover:text-fg"
+                  viewMode === "before" ? "bg-surface text-rose-400 font-semibold" : "text-fg-dim hover:text-fg"
                 )}
               >
                 Before
@@ -129,7 +129,7 @@ export function DiffViewer() {
                 onClick={() => setViewMode("after")}
                 className={cn(
                   "rounded px-2 py-1 transition-colors",
-                  viewMode === "after" ? "bg-emerald-500/20 text-emerald-300 font-semibold" : "text-fg-dim hover:text-fg"
+                  viewMode === "after" ? "bg-surface text-emerald font-semibold" : "text-fg-dim hover:text-fg"
                 )}
               >
                 After (Production)
@@ -154,7 +154,7 @@ export function DiffViewer() {
         </div>
 
         {/* Code Content */}
-        <div className="overflow-x-auto bg-[#07080c] py-3">
+        <div className="overflow-x-auto bg-obsidian py-3">
           {viewMode === "split" ? (
             <div className="grid grid-cols-1 divide-y divide-line lg:grid-cols-2 lg:divide-x lg:divide-y-0">
               <div>

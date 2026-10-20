@@ -15,7 +15,7 @@ export function TerminalDrawer() {
       onClose={close}
       labelledBy="terminal-drawer-title"
       placement="bottom"
-      className="w-full max-w-5xl overflow-hidden rounded-t-2xl border border-b-0 border-line bg-[#07080c]/95 shadow-[0_-30px_80px_-20px_rgba(16,185,129,0.18)] backdrop-blur-xl"
+      className="w-full max-w-5xl overflow-hidden rounded-t-2xl border border-b-0 border-line bg-obsidian/95 shadow-[0_-30px_80px_-20px_rgba(16,185,129,0.18)] backdrop-blur-xl"
       panelMotion={{
         initial: { y: "100%" },
         animate: { y: 0 },

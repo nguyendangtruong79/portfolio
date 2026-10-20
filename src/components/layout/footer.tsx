@@ -46,7 +46,7 @@ export function Footer() {
               >
                 {copiedEmail ? <Check className="size-4" /> : <Mail className="size-4" />}
                 <span>{profile.email}</span>
-                <span className="font-mono text-xs opacity-75">(1-click copy)</span>
+                <span className="font-mono text-xs">(1-click copy)</span>
               </button>
 
               <a

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { profile } from "@/data/profile";
+import { themeBootScript } from "@/lib/theme";
 import { AppProviders } from "@/components/providers/app-providers";
 import { DotGrid } from "@/components/ui/dot-grid";
 import { Navbar } from "@/components/layout/navbar";
@@ -64,8 +65,10 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${geistSans.variable} ${jetbrainsMono.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
       <body className="relative min-h-full flex flex-col bg-obsidian text-fg">
+        <script dangerouslySetInnerHTML={{ __html: themeBootScript() }} />
         <AppProviders>
           <DotGrid />
           <Navbar />

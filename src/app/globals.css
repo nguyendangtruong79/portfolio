@@ -3,17 +3,52 @@
 /* ──────────────────────────────────────────────────────────────────────────
    Design tokens
    ────────────────────────────────────────────────────────────────────────── */
+:root, [data-theme="dark"] {
+  --palette-obsidian: #090a0f;
+  --palette-surface: #12131a;
+  --palette-surface-2: #181924;
+  --palette-line: #27273a;
+  --palette-line-strong: #34344d;
+  --palette-emerald: #10b981;
+  --palette-cyan: #06b6d4;
+  --palette-muted: #64748b;
+  --palette-fg: #e6e8ef;
+  --palette-fg-dim: #a1a7b8;
+  color-scheme: dark;
+}
+
+[data-theme="light"] {
+  --palette-obsidian: #f4f6f8;
+  --palette-surface: #ffffff;
+  --palette-surface-2: #e7ebf0;
+  --palette-line: #7d8694;
+  --palette-line-strong: #6b7280;
+  --palette-emerald: #047857;
+  --palette-cyan: #0e7490;
+  --palette-muted: #4b5568;
+  --palette-fg: #12141a;
+  --palette-fg-dim: #3e4654;
+  color-scheme: light;
+  --color-amber-300: #92400e;
+  --color-amber-400: #92400e;
+  --color-rose-300: #be123c;
+  --color-rose-400: #be123c;
+  --color-emerald-300: #047857;
+  --color-emerald-400: #047857;
+  --color-violet-400: #6d28d9;
+}
+
 @theme inline {
-  --color-obsidian: #090a0f;
-  --color-surface: #12131a;
-  --color-surface-2: #181924;
-  --color-line: #27273a;
-  --color-line-strong: #34344d;
-  --color-emerald: #10b981;
-  --color-cyan: #06b6d4;
-  --color-muted: #64748b;
-  --color-fg: #e6e8ef;
-  --color-fg-dim: #a1a7b8;
+  --color-obsidian: var(--palette-obsidian);
+  --color-surface: var(--palette-surface);
+  --color-surface-2: var(--palette-surface-2);
+  --color-line: var(--palette-line);
+  --color-line-strong: var(--palette-line-strong);
+  --color-emerald: var(--palette-emerald);
+  --color-cyan: var(--palette-cyan);
+  --color-muted: var(--palette-muted);
+  --color-fg: var(--palette-fg);
+  --color-fg-dim: var(--palette-fg-dim);
 
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, monospace;
@@ -42,7 +77,6 @@
    ────────────────────────────────────────────────────────────────────────── */
 @layer base {
   html {
-    color-scheme: dark;
     background: var(--color-obsidian);
     scrollbar-gutter: stable;
     -webkit-text-size-adjust: 100%;
@@ -58,6 +92,9 @@
   ::selection {
     background: color-mix(in oklab, var(--color-emerald) 35%, transparent);
     color: #fff;
+  }
+  [data-theme="light"] ::selection {
+    color: #12141a;
   }
   :focus-visible {
     outline: 2px solid var(--color-emerald);
@@ -154,6 +191,8 @@
     color: #04140d;
     box-shadow: 0 0 0 1px color-mix(in oklab, var(--color-emerald) 60%, white 10%) inset, 0 10px 30px -10px color-mix(in oklab, var(--color-emerald) 60%, transparent);
   }
+  [data-theme="light"] .btn-primary { color: #ffffff; }
+  [data-theme="light"] .btn-primary:hover { background: #047857; }
   .btn-primary:hover { background: color-mix(in oklab, var(--color-emerald) 88%, white); }
   .btn-ghost {
     border: 1px solid var(--color-line);
@@ -188,7 +227,7 @@
   }
 
   .text-gradient {
-    background: linear-gradient(110deg, #fff 20%, color-mix(in oklab, var(--color-emerald) 70%, white) 50%, var(--color-cyan) 90%);
+    background: linear-gradient(110deg, var(--color-fg) 20%, var(--color-emerald) 50%, var(--color-cyan) 90%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -217,7 +256,7 @@
     width: 1.75rem;
     margin-right: 1.25rem;
     text-align: right;
-    color: #3b3d52;
+    color: var(--color-muted);
     user-select: none;
   }
 }

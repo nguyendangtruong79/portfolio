@@ -8,6 +8,7 @@ import { cn } from "@/lib/cn";
 import { profile } from "@/data/profile";
 import { useUI } from "@/components/providers/ui-provider";
 import { CoderLogo } from "@/components/ui/coder-logo";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
 
 const links = [
   { id: "impact", label: "Impact" },
@@ -106,6 +107,7 @@ export function Navbar() {
         </ul>
 
         <div className="flex items-center gap-1.5">
+          <ThemeToggle />
           <button
             type="button"
             onClick={() => setTerminalOpen(true)}

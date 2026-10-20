@@ -24,7 +24,7 @@ export function Hero() {
 
   return (
     <section id="hero" aria-labelledby="hero-title" className="relative mx-auto max-w-6xl px-5 pt-36 pb-20 sm:px-8 sm:pt-44 lg:pb-28">
-      <motion.p {...fadeUp(0)} className="mb-8 inline-flex items-center gap-2.5 rounded-full border border-emerald/25 bg-emerald/[0.07] py-1.5 pr-3.5 pl-2.5 font-mono text-xs text-emerald">
+      <motion.p {...fadeUp(0)} className="mb-8 inline-flex items-center gap-2.5 rounded-full border border-emerald/25 bg-surface py-1.5 pr-3.5 pl-2.5 font-mono text-xs text-emerald">
         <span className="relative flex size-2" aria-hidden>
           <span className="absolute inset-0 animate-pulse-ring rounded-full bg-emerald" />
           <span className="relative size-2 rounded-full bg-emerald" />

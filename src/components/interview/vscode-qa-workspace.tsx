@@ -150,17 +150,17 @@ export function VsCodeQaWorkspace() {
     switch (diff) {
       case "Easy":
         return {
-          pill: "border-emerald-500/30 bg-emerald-500/10 text-emerald-400",
+          pill: "border-emerald-500/30 bg-surface text-emerald",
           dot: "bg-emerald-400",
         };
       case "Medium":
         return {
-          pill: "border-amber-500/30 bg-amber-500/10 text-amber-400",
+          pill: "border-amber-500/30 bg-surface text-amber-400",
           dot: "bg-amber-400",
         };
       case "Hard":
         return {
-          pill: "border-rose-500/30 bg-rose-500/10 text-rose-400",
+          pill: "border-rose-500/30 bg-surface text-rose-400",
           dot: "bg-rose-400",
         };
     }
@@ -198,7 +198,7 @@ export function VsCodeQaWorkspace() {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Filter questions or tags (e.g. Next.js, Zustand)..."
-              className="h-6 w-full rounded border border-line bg-obsidian/70 pl-7 pr-6 font-mono text-[11px] text-fg placeholder:text-muted/60 focus:border-emerald/50 focus:outline-none"
+              className="h-6 w-full rounded border border-line bg-obsidian/70 pl-7 pr-6 font-mono text-[11px] text-fg placeholder:text-muted focus:border-emerald focus:outline-none"
             />
             {searchQuery && (
               <button
@@ -260,7 +260,7 @@ export function VsCodeQaWorkspace() {
                   className={cn(
                     "rounded px-2 py-0.5 font-mono text-[10px] transition-colors shrink-0",
                     active
-                      ? "bg-emerald/20 text-emerald font-semibold border border-emerald/40"
+                      ? "bg-surface text-emerald font-semibold border border-emerald"
                       : "text-muted hover:text-fg hover:bg-surface-2"
                   )}
                 >
@@ -325,7 +325,7 @@ export function VsCodeQaWorkspace() {
                               className={cn(
                                 "flex w-full items-center justify-between rounded px-2 py-1.5 font-mono text-xs transition-colors text-left group",
                                 isSelected
-                                  ? "bg-emerald/15 text-emerald border border-emerald/30 font-medium"
+                                  ? "bg-surface text-emerald border border-emerald font-medium"
                                   : "text-fg-dim hover:bg-surface-2/60 hover:text-fg"
                               )}
                             >
@@ -391,7 +391,7 @@ export function VsCodeQaWorkspace() {
                   <button
                     type="button"
                     onClick={(e) => handleCloseTab(e, qId)}
-                    className="rounded p-0.5 text-muted/60 opacity-0 group-hover:opacity-100 hover:bg-surface-2 hover:text-fg transition-opacity"
+                    className="rounded p-0.5 text-muted opacity-0 group-hover:opacity-100 hover:bg-surface-2 hover:text-fg transition-opacity"
                     title="Close Tab"
                   >
                     <X className="size-3" />
@@ -404,11 +404,11 @@ export function VsCodeQaWorkspace() {
           {/* Breadcrumbs Bar */}
           <div className="flex items-center gap-2 border-b border-line/60 bg-surface/80 px-4 py-1.5 font-mono text-[11px] text-muted overflow-x-auto">
             <span>workspace</span>
-            <ChevronRight className="size-3 text-muted/60 shrink-0" />
+            <ChevronRight className="size-3 text-muted shrink-0" />
             <span className="text-fg-dim">{activeCategory?.folderName}</span>
-            <ChevronRight className="size-3 text-muted/60 shrink-0" />
+            <ChevronRight className="size-3 text-muted shrink-0" />
             <span className="text-emerald">{activeQuestion?.filename}</span>
-            <ChevronRight className="size-3 text-muted/60 shrink-0" />
+            <ChevronRight className="size-3 text-muted shrink-0" />
             <span className="text-cyan">
               {activeSubTab === "star" ? "STAR_Model.md" : activeQuestion?.artifact.code?.filename || "Production_Artifact"}
             </span>
@@ -434,7 +434,7 @@ export function VsCodeQaWorkspace() {
                         <Clock className="size-3 text-cyan" />
                         {activeQuestion.estimatedTime}
                       </span>
-                      <span className="font-mono text-[11px] text-muted/80">
+                      <span className="font-mono text-[11px] text-muted">
                         Category: {activeCategory?.title}
                       </span>
                     </div>
@@ -446,7 +446,7 @@ export function VsCodeQaWorkspace() {
                         className={cn(
                           "flex items-center gap-1.5 rounded-md px-3 py-1 transition-colors text-xs font-medium",
                           activeSubTab === "star"
-                            ? "bg-emerald/20 text-emerald font-semibold shadow-sm border border-emerald/30"
+                            ? "bg-surface text-emerald font-semibold shadow-sm border border-emerald"
                             : "text-muted hover:text-fg"
                         )}
                       >
@@ -458,7 +458,7 @@ export function VsCodeQaWorkspace() {
                         className={cn(
                           "flex items-center gap-1.5 rounded-md px-3 py-1 transition-colors text-xs font-medium",
                           activeSubTab === "artifact"
-                            ? "bg-cyan/20 text-cyan font-semibold shadow-sm border border-cyan/30"
+                            ? "bg-surface text-cyan font-semibold shadow-sm border border-cyan"
                             : "text-muted hover:text-fg"
                         )}
                       >
@@ -499,7 +499,7 @@ export function VsCodeQaWorkspace() {
                     {/* S: Situation */}
                     <div className="rounded-xl border border-line/80 bg-surface-2/20 p-4 sm:p-5 relative overflow-hidden group hover:border-emerald/40 transition-colors">
                       <div className="flex items-start gap-3">
-                        <span className="flex size-8 shrink-0 items-center justify-center rounded-lg border border-emerald/30 bg-emerald/10 text-emerald font-mono font-bold text-sm">
+                        <span className="flex size-8 shrink-0 items-center justify-center rounded-lg border border-emerald/30 bg-surface text-emerald font-mono font-bold text-sm">
                           S
                         </span>
                         <div className="min-w-0 flex-1">
@@ -519,7 +519,7 @@ export function VsCodeQaWorkspace() {
                     {/* T: Task */}
                     <div className="rounded-xl border border-line/80 bg-surface-2/20 p-4 sm:p-5 relative overflow-hidden group hover:border-cyan/40 transition-colors">
                       <div className="flex items-start gap-3">
-                        <span className="flex size-8 shrink-0 items-center justify-center rounded-lg border border-cyan/30 bg-cyan/10 text-cyan font-mono font-bold text-sm">
+                        <span className="flex size-8 shrink-0 items-center justify-center rounded-lg border border-cyan bg-surface text-cyan font-mono font-bold text-sm">
                           T
                         </span>
                         <div className="min-w-0 flex-1">
@@ -539,7 +539,7 @@ export function VsCodeQaWorkspace() {
                     {/* A: Action */}
                     <div className="rounded-xl border border-line/80 bg-surface-2/20 p-4 sm:p-5 relative overflow-hidden group hover:border-violet-500/40 transition-colors">
                       <div className="flex items-start gap-3">
-                        <span className="flex size-8 shrink-0 items-center justify-center rounded-lg border border-violet-500/30 bg-violet-500/10 text-violet-400 font-mono font-bold text-sm">
+                        <span className="flex size-8 shrink-0 items-center justify-center rounded-lg border border-violet-500/30 bg-surface text-violet-400 font-mono font-bold text-sm">
                           A
                         </span>
                         <div className="min-w-0 flex-1">
@@ -547,7 +547,7 @@ export function VsCodeQaWorkspace() {
                             <h3 className="font-mono text-xs font-bold uppercase tracking-wider text-violet-400">
                               Action (Các Bước Triển Khai Cốt Lõi)
                             </h3>
-                            <Sparkles className="size-3.5 text-violet-400/60" />
+                            <Sparkles className="size-3.5 text-violet-400" />
                           </div>
 
                           <div className="mt-3 space-y-2.5">
@@ -568,7 +568,7 @@ export function VsCodeQaWorkspace() {
                     {/* R: Result */}
                     <div className="rounded-xl border border-emerald/30 bg-emerald/5 p-4 sm:p-5 relative overflow-hidden">
                       <div className="flex items-start gap-3">
-                        <span className="flex size-8 shrink-0 items-center justify-center rounded-lg border border-emerald/40 bg-emerald/20 text-emerald font-mono font-bold text-sm">
+                        <span className="flex size-8 shrink-0 items-center justify-center rounded-lg border border-emerald bg-surface text-emerald font-mono font-bold text-sm">
                           R
                         </span>
                         <div className="min-w-0 flex-1">
@@ -604,7 +604,7 @@ export function VsCodeQaWorkspace() {
                     <div className="flex justify-end pt-2">
                       <button
                         onClick={() => setActiveSubTab("artifact")}
-                        className="btn btn-ghost h-8 px-3 font-mono text-xs text-cyan hover:text-cyan border border-cyan/30 bg-cyan/5"
+                        className="btn btn-ghost h-8 px-3 font-mono text-xs text-cyan hover:text-cyan border border-cyan bg-surface"
                       >
                         <span>View Production Artifact ({activeQuestion.artifact.type === "code" ? "Code" : "Mindmap"})</span>
                         <ChevronRight className="size-3" />
@@ -691,16 +691,16 @@ export function VsCodeQaWorkspace() {
                                     key={idx}
                                     className="flex items-start hover:bg-surface-2/40 py-0.5 transition-colors font-mono"
                                   >
-                                    <span className="w-9 shrink-0 select-none text-right pr-4 text-muted/40 text-[11px]">
+                                    <span className="w-9 shrink-0 select-none text-right pr-4 text-muted text-[11px]">
                                       {idx + 1}
                                     </span>
                                     <span
                                       className={cn(
                                         "whitespace-pre font-mono text-[11.5px] leading-relaxed",
                                         isComment
-                                          ? "text-muted/70 italic"
+                                          ? "text-muted italic"
                                           : isKeyword
-                                          ? "text-cyan/90 font-medium"
+                                          ? "text-cyan font-medium"
                                           : "text-fg-dim"
                                       )}
                                     >
@@ -789,8 +789,8 @@ function MindmapTreeRenderer({
           className={cn(
             "rounded-xl border px-4 py-2 text-center transition-all shadow-md",
             selectedNode === root.label
-              ? "border-amber-400 bg-amber-400/20 text-amber-300 ring-2 ring-amber-400/40"
-              : "border-amber-400/40 bg-surface-2/80 text-fg hover:border-amber-400"
+              ? "border-amber-400 bg-surface text-amber-400 ring-2 ring-amber-400/40"
+              : "border-amber-400 bg-surface text-fg hover:border-amber-400"
           )}
         >
           <div className="text-xs font-bold uppercase tracking-wider text-amber-400">
@@ -882,8 +882,8 @@ function MindmapBranch({
                 className={cn(
                   "flex flex-col w-full text-left rounded p-1.5 text-[10.5px] transition-colors border",
                   isSubSelected
-                    ? "border-emerald/40 bg-emerald/10 text-emerald"
-                    : "border-line/40 bg-obsidian/50 text-fg-dim hover:bg-surface-2"
+                    ? "border-emerald bg-surface text-emerald"
+                    : "border-line bg-obsidian/50 text-fg-dim hover:bg-surface-2"
                 )}
               >
                 <span className="font-semibold text-fg text-[11px]">{sub.label}</span>

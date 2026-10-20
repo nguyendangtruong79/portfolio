@@ -26,6 +26,7 @@ import { SpotlightCard } from "@/components/ui/spotlight-card";
 import { GitHubIcon, LinkedInIcon } from "@/components/ui/brand-icons";
 import { useToast } from "@/components/providers/toast-provider";
 import { CoderLogo } from "@/components/ui/coder-logo";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { VsCodeQaWorkspace } from "@/components/interview/vscode-qa-workspace";
 
 export default function InterviewDossierPage() {
@@ -70,7 +71,7 @@ export default function InterviewDossierPage() {
     return (
       <div className="flex min-h-screen flex-col items-center justify-center bg-obsidian px-5 text-fg">
         <div className="w-full max-w-md rounded-2xl border border-rose-500/30 bg-surface/90 p-8 text-center shadow-2xl backdrop-blur-xl">
-          <div className="mx-auto flex size-14 items-center justify-center rounded-2xl border border-rose-500/30 bg-rose-500/10 text-rose-400 mb-5">
+          <div className="mx-auto flex size-14 items-center justify-center rounded-2xl border border-rose-500/30 bg-surface text-rose-400 mb-5">
             <Lock className="size-6 animate-pulse" />
           </div>
           <p className="font-mono text-xs tracking-wider uppercase text-rose-400 font-semibold">
@@ -91,7 +92,7 @@ export default function InterviewDossierPage() {
               Return to Terminal Gateway
             </Link>
           </div>
-          <p className="mt-4 text-[11px] font-mono text-muted animate-pulse">
+          <p className="mt-4 text-[11px] font-mono text-muted">
             Redirecting automatically...
           </p>
         </div>
@@ -113,7 +114,8 @@ export default function InterviewDossierPage() {
           </Link>
 
           <div className="flex items-center gap-3">
-            <span className="flex items-center gap-1.5 rounded-full border border-emerald/30 bg-emerald/10 px-3 py-1 font-mono text-[11px] font-medium text-emerald">
+            <ThemeToggle />
+            <span className="flex items-center gap-1.5 rounded-full border border-emerald/30 bg-surface px-3 py-1 font-mono text-[11px] font-medium text-emerald">
               <ShieldCheck className="size-3.5" />
               AUTHENTICATED // INTERVIEW DOSSIER
             </span>

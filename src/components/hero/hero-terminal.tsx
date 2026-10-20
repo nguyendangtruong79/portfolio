@@ -118,7 +118,7 @@ export function HeroTerminal() {
   return (
     <div
       ref={ref}
-      className="relative overflow-hidden rounded-2xl border border-line bg-[#07080c]/90 shadow-[0_30px_80px_-30px_rgba(16,185,129,0.25)] backdrop-blur"
+      className="relative overflow-hidden rounded-2xl border border-line bg-obsidian/90 shadow-[0_30px_80px_-30px_rgba(16,185,129,0.25)] backdrop-blur"
     >
       <div className="flex items-center justify-between border-b border-line px-4 py-2.5">
         <span className="flex gap-1.5" aria-hidden>
