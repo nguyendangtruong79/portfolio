@@ -184,22 +184,8 @@ export function Terminal({
         return;
       }
 
-      // If not yet authenticated, request password
-      const promptLine: Line = {
-        id: ++seq.current,
-        node: (
-          <div className="rounded-lg border border-amber-500/30 bg-surface p-2.5 my-1 text-xs">
-            <p className="text-amber-400 font-semibold flex items-center gap-1.5">
-              <span>🔒 SECURITY GATEWAY: Confidential Interview Briefing Room</span>
-            </p>
-            <p className="text-fg-dim mt-0.5">
-              Restricted area for Engineering Managers &amp; CTOs. Please enter the access password:
-            </p>
-          </div>
-        ),
-      };
-
-      setLines((prev) => [...prev, echo, promptLine]);
+      // No session: echo the command and prompt for password immediately (sudo-style)
+      setLines((prev) => [...prev, echo]);
       setIsPasswordMode(true);
       setPasswordValue("");
       setInput("");
